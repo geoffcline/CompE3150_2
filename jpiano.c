@@ -2,6 +2,7 @@
 
 void piano()
 {
+	TMOD=0x11;
   while(bt9)
   {
     while(~bt1)

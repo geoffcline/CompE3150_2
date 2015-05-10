@@ -2,8 +2,13 @@
 
 void step()
 {
+
   const int start = 7045;
 	int adj = 0;
+	
+	TMOD=0x11;
+	IEN0 = 0x00;
+	
   while(bt9)
   {
 		spkr = ~spkr;
