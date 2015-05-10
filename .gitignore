@@ -3,6 +3,13 @@
 *.ko
 *.obj
 *.elf
+*.LST
+*.__i
+*.htm
+*.lnp
+*.m51
+*.uvproj
+project2_1
 
 # Precompiled Headers
 *.gch
