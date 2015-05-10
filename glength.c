@@ -12,7 +12,7 @@ void matchlength()
 	while(~bt1)
 		rec++;
 
-	rec = rec / 33;
+	rec = rec / 300;
 	
   while(rec)
   {
