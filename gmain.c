@@ -13,7 +13,6 @@ void main ( void )
   	{
     	while(~bt1)
 		{
-			send_test();
 			Song_Name(1);
 			runsong(1);	
 		}

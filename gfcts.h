@@ -2,10 +2,9 @@
 #define  GFCTS_H
 
 #include <reg932.h>
+#include "uart.h"
 
 void delay1(signed int i);
-
-void send_test();
 
 void runsong(const int i);
 
@@ -16,10 +15,6 @@ void playnote(const int nf, const int nl);
 void piano();
 
 void wind_up_song();
-
-void Set_Timer();
-
-void send_char(const char Letter );
 
 void Song_Name (int button);
 
