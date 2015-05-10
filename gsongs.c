@@ -56,7 +56,7 @@ void song (const int SNF[],const int SNL[],const int SSZ)
 		nf = SNF[i];
 		nl = SNL[i];
 		playnote(nf,nl);
-		NoteName(nf);
+		//NoteName(nf);
 		i = i + 1;
 	}
 	
