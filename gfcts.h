@@ -19,7 +19,7 @@ void wind_up_song();
 
 void Set_Timer();
 
-void send_char(char Letter );
+void send_char(const char Letter );
 
 void Song_Name (int button);
 

@@ -56,7 +56,6 @@ void Song_Name (int button)
 
 void send_test()
 {	
-	
 	int roll = 0;
 	
 	Set_Timer();
@@ -87,7 +86,7 @@ void Set_Timer()
 }
 
 
-void send_char(char Letter )
+void send_char(const char Letter)
 {
 	SBUF = Letter;
 	while(~TI);
