@@ -23,20 +23,30 @@ void main ( void )
     	
     if(~bt3)
 		{
-      		piano();
+			piano();
 		}
 		
 		if(~bt4)
 		{
       Song_Name(1);		
+			while(~bt4);
 		}
 		if(~bt5)
 		{
       Song_Name(0);		
+			while(~bt5);
 		}
 		if(~bt6)
-		{;		
+		{		
 			wind_up_song();
+		}
+		if(~bt7)
+		{		
+			step();
+		}
+		if(~bt8)
+		{		
+			matchlength();
 		}
   }	
 }
