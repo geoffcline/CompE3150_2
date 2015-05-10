@@ -1,8 +1,9 @@
 #include "gfcts.h"
  
+
 void NoteName(char Name){
 
-	 outenable = 1; // Output Enable
+	 outenable = 0; // Output Enable
 	 ap = 0;//a 
 	 bp = 0;//b
 	 cp = 0;//c
@@ -10,6 +11,7 @@ void NoteName(char Name){
 	 ep = 0;//e
 	 fp = 0;//f
 	 gp = 0;//g
+	
 	if(Name=='1'){ // C
 	  ap = 1;//a
 	  fp = 1;//f
@@ -47,4 +49,5 @@ void NoteName(char Name){
 		dp = 1;//f
 
 	}
+	outenable = 1;
 }

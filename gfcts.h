@@ -2,10 +2,13 @@
 #define  GFCTS_H
 
 #include <reg932.h>
+#include "uart.h"
 
 void delay1(signed int i);
 
-void send_test();
+void step();
+
+void matchlength();
 
 void runsong(const int i);
 
@@ -13,13 +16,11 @@ void song (const int SNF[],const int SNL[],const int SSZ);
 
 void playnote(const int nf, const int nl);
 
+void NoteName(char Name);
+
 void piano();
 
 void wind_up_song();
-
-void Set_Timer();
-
-void send_char(char Letter );
 
 void Song_Name (int button);
 
@@ -35,7 +36,7 @@ sbit bt7 = P2^0;
 sbit bt8 = P0^1;
 sbit bt9 = P2^3;
 
-sbit outenable = P1^7;
+sbit outenable = P2^0;
 sbit ap =  P1^4;
 sbit bp =  P1^3;
 sbit cp =  P1^2;

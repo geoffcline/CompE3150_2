@@ -10,39 +10,56 @@ void main ( void )
 	while(~bt9);
 	
 	while(1)
-  {
-    while(~bt1)
+  	{
+    if(~bt1)
 		{
-			send_test();
-			Song_Name(1);
-			runsong(1);
-			
-		} 
-    while(~bt2)
+			runsong(1);	
+		}
+
+    if(~bt2)
 		{
-			Song_Name(0);
 			runsong(0);
 		}
-    while(~bt3)
+    	
+    if(~bt3)
 		{
-      piano();
+			piano();
 		}
-		while(~bt4)
+		
+		if(~bt4)
 		{
-      wind_up_song();
+      Song_Name(1);		
+			while(~bt4);
+		}
+		if(~bt5)
+		{
+      Song_Name(0);		
+			while(~bt5);
+		}
+		if(~bt6)
+		{		
+			wind_up_song();
+		}
+		if(~bt7)
+		{		
+			step();
+		}
+		if(~bt8)
+		{		
+			matchlength();
 		}
   }	
 }
 
 void Delay1(signed int i)
 {
-  TH1=i >> 8;
-  TL1=i;
-  TR1=1;
+	TH1=i >> 8;
+  	TL1=i;
+  	TR1=1;
 	TF1=0;
-  while(!TF1);
-  TR1=0;
-  TF1=0;
+  	while(!TF1);
+  	TR1=0;
+  	TF1=0;
 	
 	return;
 }	

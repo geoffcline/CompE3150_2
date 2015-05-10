@@ -3,33 +3,32 @@
 //0, C4, D4, E4, F4, G4
 code const int tone_values[6] = {0,-7045,-6276,-5591,-5278,-4702};
 
-// Note arrays, with note IDs
-
-//Mary Had a Little Lamb
+//Note arrays, with note IDs
+	//Mary Had a Little Lamb
 code const int  marysz = 36;
-code int  maryn[]=
-	          {3,2,1,2,3,3,3,0,0,
-						 2,2,2,0,0,3,5,5,0,
-	           0,3,2,1,2,3,3,3,0,
-	           0,3,2,2,3,2,1,0,0 };
-code int  maryd[]=
-	          {1,1,1,1,1,1,2,0,0,
-						 1,1,2,1,1,2,0,0,1,
-	           1,2,1,1,2,0,0,1,1,
-	           1,1,1,1,1,0,0,1,1 };
+code const int  maryn[]=
+	       {3,2,1,2,3,3,3,0,0,
+			2,2,2,0,0,3,5,5,0,
+	        0,3,2,1,2,3,3,3,0,
+	        0,3,2,2,3,2,1,0,0 };
+code const int  maryd[]=
+	       {1,1,1,1,1,1,2,0,0,
+			1,1,2,1,1,2,0,0,1,
+	        1,2,1,1,2,0,0,1,1,
+	        1,1,1,1,1,0,0,1,1 };
 
-//When the Saints
+	//When the Saints
 code const int  saintsz= 22;
-code int  saintsn[22]=
-	          {1,3,4,5,0,0,
-						 1,3,4,5,0,0,
-						 1,3,4,5,3,1,
-             3,2,0,0     };
-code int  saintsd[22]=
-	          {1,1,1,4,0,0,
-						 1,1,1,4,0,0,
-						 1,1,1,2,2,2,
-             2,4,0,0     };
+code const int  saintsn[22]=
+	       {1,3,4,5,0,0,
+			1,3,4,5,0,0,
+			1,3,4,5,3,1,
+            3,2,0,0     };
+code const int  saintsd[22]=
+	       {1,1,1,4,0,0,
+			1,1,1,4,0,0,
+			1,1,1,2,2,2,
+            2,4,0,0     };
 						
 int lflag = 0;
 						 
@@ -57,6 +56,7 @@ void song (const int SNF[],const int SNL[],const int SSZ)
 		nf = SNF[i];
 		nl = SNL[i];
 		playnote(nf,nl);
+		//NoteName(nf);
 		i = i + 1;
 	}
 	
