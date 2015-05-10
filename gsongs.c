@@ -1,5 +1,13 @@
 #include "gfcts.h"
 
+int t0longflag = 0;
+						 
+unsigned int t0intcnt = 0;
+
+const int NOTEFACTOR1 = 2000;
+const int NOTEFACTOR2 = 20000;
+const int PAUSEFACTOR = 500;
+
 //0, C4, D4, E4, F4, G4
 code const int tone_values[6] = {0,-7045,-6276,-5591,-5278,-4702};
 
@@ -30,15 +38,9 @@ code const int  saintsd[22]=
 			1,1,1,2,2,2,
             2,4,0,0     };
 						
-int lflag = 0;
-						 
-unsigned int intcnt = 0;
-
-
-
-void runsong(const int i)
+void runsong(const int songno)
 {
-	if (i == 1)
+	if (songno)
 		song(saintsn, saintsd, saintsz);
 	else
 		song(maryn, maryd, marysz);
@@ -67,46 +69,55 @@ void song (const int SNF[],const int SNL[],const int SSZ)
 void playnote(const int nf, const int nl)
 {
 	int notefreq = tone_values[nf];
-	signed int noteleng = -56;
 	
-	TMOD=0x11;
+	TMOD = 0x11;
 	IEN0 = 0x81;
 	
-	TH0 = -2000 >> 8;
-	TL0 = -2000;
-	TR0 = 1;
+	sett0(NOTEFACTOR1*nl);
 		
-  if ( notefreq == 0)
+  	if (notefreq)
 	{
-		while(!lflag);
-	}
-	else
-	{	
-		while(!lflag)
+		while(!t0longflag)
 		{
 			delay1(notefreq);
 			spkr = ~spkr;
 		}
 	}
+	else
+	{	
+		while(!t0longflag);
+	}
 	
-	TR0 = 0;
-	TF0 = 0;
-	lflag = 0;
+	TR0   = 0;
+	TF0   = 0;
+	t0longflag = 0;
+
+	sett0(PAUSEFACTOR);
+	while(!t0longflag);
 	
 	return;
 }
 
+void sett0(const int load)
+{
+	static int hold = load;
+
+	if(load != -1)
+		hold = load;
+
+	TH0 = -hold >> 8;
+	TL0 = -hold;
+	TR0 = 1;
+}
 
 void timer0 (void) interrupt 1
 {
-	if (++intcnt == 20000)
+	if (++t0intcnt == NOTEFACTOR2)
 	{
 		TR0 = 0;
-		lflag = 1;
-		intcnt = 0;
-		TH0 = -2000 >> 8;
-	  TL0 = -2000;
-		TR0 = 1;
+		t0longflag = 1;
+		t0intcnt = 0;
+		sett0(-1);
 	}
 }
 	
