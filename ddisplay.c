@@ -2,12 +2,13 @@
 
 // Send Character to Terminal
 
-void Song_Name (int button)
+void Song_Name (const int button)
 {
 	uart_init();
 	
 	if (button == 0)
 	{
+		uart_transmit(1);
 		uart_transmit('M');
 		uart_transmit('A');
 		uart_transmit('R');
@@ -30,11 +31,15 @@ void Song_Name (int button)
 		uart_transmit('A');
 		uart_transmit('M');
 		uart_transmit('B');
-		uart_transmit('\N');
+		uart_transmit(10);
+		uart_transmit(13);
+		uart_transmit(2);
+		
 	}
 
 	if (button == 1)
 	{
+		uart_transmit(1);
 		uart_transmit('W');
 		uart_transmit('H');
 		uart_transmit('E');
@@ -50,7 +55,9 @@ void Song_Name (int button)
 		uart_transmit('N');
 		uart_transmit('T');
 		uart_transmit('S');
-		uart_transmit('\N');
+		uart_transmit(10);
+		uart_transmit(13);
+		uart_transmit(2);
 	}
 
 	return;
