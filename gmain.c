@@ -11,26 +11,32 @@ void main ( void )
 	
 	while(1)
   	{
-    	while(~bt1)
+    if(~bt1)
 		{
-			Song_Name(1);
 			runsong(1);	
 		}
 
-    	while(~bt2)
+    if(~bt2)
 		{
-			Song_Name(0);
 			runsong(0);
 		}
     	
-    	while(~bt3)
+    if(~bt3)
 		{
       		piano();
 		}
 		
-		while(~bt4)
+		if(~bt4)
 		{
-      		wind_up_song();
+      Song_Name(1);		
+		}
+		if(~bt5)
+		{
+      Song_Name(0);		
+		}
+		if(~bt6)
+		{;		
+			wind_up_song();
 		}
   }	
 }
