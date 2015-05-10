@@ -9,7 +9,7 @@
 *.lnp
 *.m51
 *.uv*
-*uvproj*
+*uv*
 project2_1
 
 # Precompiled Headers

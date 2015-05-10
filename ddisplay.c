@@ -77,7 +77,7 @@ void Set_Timer()
 {
 	SCON = 0x40;
 	TMOD = 0x20; 
-	TH1  = -234;
+	TH1  = 0xFE;
 	TL1  = TH1;
 	TR1  = 1;
 	TI   = 0;
