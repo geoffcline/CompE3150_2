@@ -1,21 +1,22 @@
-// Increment code
+#include "gfcts.h"
 
-
-
-
-Void Step(int pitch=65030;){
-	
-	while(!exit){
-	if(increase==0 &&pitch<=65283){
-	  pitch=pitch+58;
-	  }
-	 if(decrease==0 && pitch>=66176){
-		pitch=pitch-58;
-	 }
-   spkr = ~spkr;
-   delay1(pitch);
-   spkr=~spkr;
+void step()
+{
+  const int start = 7045;
+	int adj = 0;
+  while(bt9)
+  {
+		spkr = ~spkr;
+		if(~bt2)
+			adj++;
+		if(~bt3)
+			adj--;
+		delay1(adj - start);
+		
+		if (adj / start != 0 )
+			adj = 0;
+			
 	}
-	return;
+	return; 
 }
 
