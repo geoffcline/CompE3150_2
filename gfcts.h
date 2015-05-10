@@ -6,6 +6,10 @@
 
 void delay1(signed int i);
 
+void step();
+
+void matchlength();
+
 void runsong(const int i);
 
 void song (const int SNF[],const int SNL[],const int SSZ);
