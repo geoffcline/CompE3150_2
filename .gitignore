@@ -8,7 +8,8 @@
 *.htm
 *.lnp
 *.m51
-*.uvproj
+*.uv*
+*uvproj*
 project2_1
 
 # Precompiled Headers
